@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Aircraft.h"
+#import "DataStore.h"
 @interface AircraftQueueTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *aircraftArray;
+@property (strong, nonatomic) DataStore *dataStore;
 
 @end

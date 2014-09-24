@@ -7,9 +7,10 @@
 //
 
 @import UIKit;
+#import "DataStore.h"
 
 @interface NewAircraftViewController : UIViewController
 
-@property (strong, nonatomic) NSMutableArray *aircraftArray;
+@property (strong, nonatomic) DataStore *dataStore;
 
 @end

@@ -24,6 +24,8 @@
     [super viewDidLoad];
     aircraftArray = [NSMutableArray array];
     
+    self.dataStore = [[DataStore alloc] initArrays];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,7 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [aircraftArray count];
+    return [self.dataStore.aircraftsArray count];
 }
 
 
@@ -64,7 +66,7 @@
     
     // Configure the cell...
     UILabel *contentLabel = (UILabel*) [cell viewWithTag:100];
-    Aircraft *aircraft = [aircraftArray objectAtIndex:indexPath.row];
+    Aircraft *aircraft = [self.dataStore.aircraftsArray objectAtIndex:indexPath.row];
     contentLabel.text = [NSString stringWithFormat:@"%@ %@ plane", aircraft.size, aircraft.type];
     
     UILabel *createdAtLabel = (UILabel*) [cell viewWithTag:101];
@@ -118,62 +120,37 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"QueueToNewAircraftSegue"]) {
         NewAircraftViewController *vc = [segue destinationViewController];
-        vc.aircraftArray = self.aircraftArray;
+        vc.dataStore = self.dataStore;
     }
 }
 
 - (IBAction)flushBarbuttonItemPressed:(id)sender {
-    [self.aircraftArray removeAllObjects];
+    [self.dataStore removeAllObjects];
     [self.tableView reloadData];
 }
 - (IBAction)dequeueBarButtonItemPressed:(id)sender {
-    // First see if we can find a large passenger aircraft. (This array is already sorted by time of insertion)
-    int index = 0;
-    Aircraft *aircraft = [self findNextAircraftOfType:@"passenger" size:@"large" fromIndex:index];
-    if (aircraft) {
-        // Found the first large passenger aircraft, remove it from queue in background thread
-        //[self NSLogAirCraft:aircraft];
-        
-        [self.aircraftArray removeObject:aircraft];
-        [self.tableView reloadData];
-        
-    }
-    /*
-    else {
-        // Can't find a large passenger aircraft, lets see if we can find a small passenger aircraft
-        aircraft = [self findNextAircraftOfType:@"passenger" size:@"small" fromIndex:0];
-        if (aircraft) {
-            // Found a small passenger plane
-            [aircraft deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                [self loadObjects];
-            }];
-        } else { //only caro planes
-            // Don't have a large or small passenger plane, meaning there are only cargo planes
-            aircraft = [self findNextAircraftOfType:@"cargo" size:@"large" fromIndex:0];
-            if (aircraft) {
-                // Found a large cargo
-                [aircraft deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    [self loadObjects];
-                }];
+    // First we dequeue the large passenger planes
+    if ([self.dataStore.largePassengerArray count] > 0) {
+        [self.dataStore dequeueLargePassenger];
+    } else {
+        // no more large passenger planes left, dequeue small passenger planes
+        if ([self.dataStore.smallPassengerArray count] > 0) {
+            [self.dataStore dequeueSmallPassenger];
+        } else {
+            // no more passenger planes left, dequeue large cargo
+            if ([self.dataStore.largeCargoArray count] > 0) {
+                [self.dataStore dequeueLargeCargo];
             } else {
-                // No passenger or large cargo, see if we can find a small cargo
-                aircraft = [self findNextAircraftOfType:@"cargo" size:@"small" fromIndex:0];
-                if (aircraft) {
-                    // Found small cargo plane
-                    [aircraft deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        [self loadObjects];
-                    }];
-                } else {
-                    NSLog(@"We dont have any large passenger, or small passenger, or large cargo, or small cargo aircrafts in queue");
+                if ([self.dataStore.smallCargoArray count] > 0)  {
+                    [self.dataStore dequeueSmallCargo];
                 }
             }
         }
-    }*/
 
+    }
     
-    
-    
-     [self.tableView reloadData];
+    [self.tableView reloadData];
+   
 }
 
 
@@ -181,29 +158,13 @@
 
 
 #pragma mark - Helper Functions
-// Recursive function: Find the next aircraft of type  and size passed in, returns nil if nothing is found
-- (Aircraft *) findNextAircraftOfType:(NSString *)type size:(NSString *)size fromIndex:(int) index {
-    // Iterate through array of aircrafts returned from Parse until we find an aircraft with the criteria passed in, return nil if nothing is found
-    if (index < [self.aircraftArray count]){
-        Aircraft *aircraft = self.aircraftArray[index];
-        if (aircraft && [aircraft.type isEqualToString:type] && [aircraft.size isEqualToString:size] && index < [self.aircraftArray count]) {
-            return aircraft;
-        } else {
-            return [self findNextAircraftOfType:type size:size fromIndex:++index];
-        }
-    } else {
-        return nil;
-    }
-}
-
-
 // NSLog an aircraft for debugging
 - (void) NSLogAirCraft: (Aircraft *)aircraft {
     NSString *createdAtString =  [self.dateFormatter stringFromDate:aircraft.createdAt];
     if ([createdAtString length] > 0) {
         createdAtString = [createdAtString substringToIndex:[createdAtString length] - 6];
     }
-    NSLog(@"%@ %@ createdAt:%@", aircraft.size, aircraft.type, createdAtString);
+    NSLog(@"Found %@ %@ createdAt:%@", aircraft.size, aircraft.type, createdAtString);
 }
 
 

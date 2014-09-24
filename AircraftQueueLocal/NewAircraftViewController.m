@@ -40,23 +40,37 @@
 - (IBAction)submitAircraftButtonPressed:(id)sender {
     
     Aircraft *aircraft = [[Aircraft alloc] init];
+    [aircraft setIndex:[self.dataStore.aircraftsArray count]];
+    [aircraft setCreatedAt:[NSDate date]];
     
     // Assign type and size of aircraft depending on the state of the UISegmentedControls
     if (self.aircraftTypeSegmentedControl.selectedSegmentIndex == 0) {
         [aircraft setType:@"passenger"];
+        if (self.aircraftSizeSegmentedControl.selectedSegmentIndex == 0) {
+            // large passenger
+            [aircraft setSize:@"large"];
+            [self.dataStore.largePassengerArray addObject:aircraft];
+        } else {
+            // small passenger
+            [aircraft setSize:@"small"];
+            [self.dataStore.smallPassengerArray addObject:aircraft];
+        }
+        
     } else {
         [aircraft setType:@"cargo"];
+        if (self.aircraftSizeSegmentedControl.selectedSegmentIndex == 0) {
+            // large cargo
+            [aircraft setSize:@"large"];
+            [self.dataStore.largeCargoArray addObject:aircraft];
+        } else {
+            // small cargo
+            [aircraft setSize:@"small"];
+            [self.dataStore.smallCargoArray addObject:aircraft];
+        }
     }
     
-    if (self.aircraftSizeSegmentedControl.selectedSegmentIndex == 0) {
-        [aircraft setSize:@"large"];
-    } else {
-        [aircraft setSize:@"small"];
-    }
-    [aircraft setCreatedAt:[NSDate date]];
-    [self.aircraftArray addObject:aircraft];
+    [self.dataStore.aircraftsArray addObject:aircraft];
     
-     NSLog(@"inside new arcraft... aircraftArray.count:%lu", [self.aircraftArray count]);
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }

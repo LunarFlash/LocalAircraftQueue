@@ -17,6 +17,7 @@
 		35A9EC1119D22C6D00A2EB40 /* AircraftQueueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1019D22C6D00A2EB40 /* AircraftQueueTableViewController.m */; };
 		35A9EC1419D22C9B00A2EB40 /* Aircraft.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1319D22C9B00A2EB40 /* Aircraft.m */; };
 		35A9EC1719D2433D00A2EB40 /* NewAircraftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1619D2433D00A2EB40 /* NewAircraftViewController.m */; };
+		35A9EC1A19D2864800A2EB40 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1919D2864800A2EB40 /* DataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		35A9EC1319D22C9B00A2EB40 /* Aircraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aircraft.m; sourceTree = "<group>"; };
 		35A9EC1519D2433D00A2EB40 /* NewAircraftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAircraftViewController.h; sourceTree = "<group>"; };
 		35A9EC1619D2433D00A2EB40 /* NewAircraftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAircraftViewController.m; sourceTree = "<group>"; };
+		35A9EC1819D2864800A2EB40 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		35A9EC1919D2864800A2EB40 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 			children = (
 				35A9EC1219D22C9B00A2EB40 /* Aircraft.h */,
 				35A9EC1319D22C9B00A2EB40 /* Aircraft.m */,
+				35A9EC1819D2864800A2EB40 /* DataStore.h */,
+				35A9EC1919D2864800A2EB40 /* DataStore.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A9EC1A19D2864800A2EB40 /* DataStore.m in Sources */,
 				35A9EBED19D22BAC00A2EB40 /* AircraftQueueLocal.xcdatamodeld in Sources */,
 				35A9EC1419D22C9B00A2EB40 /* Aircraft.m in Sources */,
 				35A9EC1119D22C6D00A2EB40 /* AircraftQueueTableViewController.m in Sources */,
