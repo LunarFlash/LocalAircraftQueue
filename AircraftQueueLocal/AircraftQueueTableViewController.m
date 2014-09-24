@@ -17,12 +17,12 @@
 @end
 
 @implementation AircraftQueueTableViewController
-@synthesize aircraftArray;
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    aircraftArray = [NSMutableArray array];
+
     
     self.dataStore = [[DataStore alloc] initArrays];
 

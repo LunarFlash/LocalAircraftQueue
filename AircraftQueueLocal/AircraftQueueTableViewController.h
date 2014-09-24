@@ -11,7 +11,6 @@
 #import "DataStore.h"
 @interface AircraftQueueTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *aircraftArray;
 @property (strong, nonatomic) DataStore *dataStore;
 
 @end
