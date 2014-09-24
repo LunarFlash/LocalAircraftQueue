@@ -10,7 +10,6 @@
 
 @interface DataStore : NSObject
 
-@property (strong, nonatomic) NSMutableArray *aircraftsArray;
 @property (strong, nonatomic) NSMutableArray *largePassengerArray;
 @property (strong, nonatomic) NSMutableArray *smallPassengerArray;
 @property (strong, nonatomic) NSMutableArray *largeCargoArray;
@@ -18,9 +17,5 @@
 
 -(id)initArrays;
 - (void)removeAllObjects;
-- (void)dequeueLargePassenger;
-- (void)dequeueSmallPassenger;
-- (void)dequeueLargeCargo;
-- (void)dequeueSmallCargo;
 
 @end

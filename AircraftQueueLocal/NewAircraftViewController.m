@@ -40,7 +40,7 @@
 - (IBAction)submitAircraftButtonPressed:(id)sender {
     
     Aircraft *aircraft = [[Aircraft alloc] init];
-    [aircraft setIndex:[self.dataStore.aircraftsArray count]];
+
     [aircraft setCreatedAt:[NSDate date]];
     
     // Assign type and size of aircraft depending on the state of the UISegmentedControls
@@ -68,8 +68,6 @@
             [self.dataStore.smallCargoArray addObject:aircraft];
         }
     }
-    
-    [self.dataStore.aircraftsArray addObject:aircraft];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 

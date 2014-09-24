@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XIV-q6-sKi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -10,6 +11,7 @@
             <objects>
                 <tableViewController id="0Kq-y9-Lro" customClass="AircraftQueueTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="9oi-tA-rqj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -138,15 +140,15 @@
                                 <exclude reference="FV8-i6-0Kk"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="iAr-JH-RDI"/>
-                                <exclude reference="sxO-c9-4xX"/>
-                                <exclude reference="tjD-zj-ewd"/>
-                                <exclude reference="69I-Uu-O4t"/>
-                                <exclude reference="AXg-7P-rWg"/>
-                                <exclude reference="z9L-fB-fdb"/>
                                 <exclude reference="3II-KG-55i"/>
                                 <exclude reference="BBB-JL-fYs"/>
                                 <exclude reference="Iad-SH-0yM"/>
+                                <exclude reference="69I-Uu-O4t"/>
+                                <exclude reference="AXg-7P-rWg"/>
+                                <exclude reference="z9L-fB-fdb"/>
+                                <exclude reference="iAr-JH-RDI"/>
+                                <exclude reference="sxO-c9-4xX"/>
+                                <exclude reference="tjD-zj-ewd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -156,15 +158,15 @@
                                 <include reference="FV8-i6-0Kk"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="iAr-JH-RDI"/>
-                                <include reference="sxO-c9-4xX"/>
-                                <include reference="tjD-zj-ewd"/>
-                                <include reference="69I-Uu-O4t"/>
-                                <include reference="AXg-7P-rWg"/>
-                                <include reference="z9L-fB-fdb"/>
                                 <include reference="3II-KG-55i"/>
                                 <include reference="BBB-JL-fYs"/>
                                 <include reference="Iad-SH-0yM"/>
+                                <include reference="69I-Uu-O4t"/>
+                                <include reference="AXg-7P-rWg"/>
+                                <include reference="z9L-fB-fdb"/>
+                                <include reference="iAr-JH-RDI"/>
+                                <include reference="sxO-c9-4xX"/>
+                                <include reference="tjD-zj-ewd"/>
                             </mask>
                         </variation>
                     </view>

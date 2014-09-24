@@ -52,12 +52,35 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.dataStore.aircraftsArray count];
+    if (section == 0) {
+        return [self.dataStore.largePassengerArray count];
+    } else if (section == 1) {
+        return [self.dataStore.smallPassengerArray count];
+    } else if (section == 2) {
+        return [self.dataStore.largeCargoArray count];
+    } else {
+        return [self.dataStore.smallCargoArray count];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 0) {
+        return @"LARGE PASSENGER AIRCRAFTS";
+    }
+    else if (section == 1) {
+        return @"SMALL PASSENGER AIRCRAFTS";
+    }
+    else if(section == 2) {
+        return @"LARGE CARGO AIRCRAFTS";
+    }
+    else {
+        return @"SMALL CARGO AIRCRAFTS";
+    }
 }
 
 
@@ -65,9 +88,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    Aircraft *aircraft = nil; //[self.dataStore.aircraftsArray objectAtIndex:indexPath.row];
+    if (indexPath.section == 0) {
+        aircraft = [self.dataStore.largePassengerArray objectAtIndex:indexPath.row];
+    } else if (indexPath.section == 1) {
+        aircraft = [self.dataStore.smallPassengerArray objectAtIndex:indexPath.row];
+    } else if (indexPath.section == 2) {
+        aircraft = [self.dataStore.largeCargoArray objectAtIndex:indexPath.row];
+    } else {
+        aircraft = [self.dataStore.smallCargoArray objectAtIndex:indexPath.row];
+    }
+    
     UILabel *contentLabel = (UILabel*) [cell viewWithTag:100];
-    Aircraft *aircraft = [self.dataStore.aircraftsArray objectAtIndex:indexPath.row];
-    contentLabel.text = [NSString stringWithFormat:@"%@ %@ plane", aircraft.size, aircraft.type];
+    contentLabel.text = [NSString stringWithFormat:@"%@ %@", aircraft.size, aircraft.type];
     
     UILabel *createdAtLabel = (UILabel*) [cell viewWithTag:101];
     NSString *createdAtString =  [self.dateFormatter stringFromDate:aircraft.createdAt];
@@ -128,29 +162,27 @@
     [self.dataStore removeAllObjects];
     [self.tableView reloadData];
 }
+
 - (IBAction)dequeueBarButtonItemPressed:(id)sender {
     // First we dequeue the large passenger planes
     if ([self.dataStore.largePassengerArray count] > 0) {
-        [self.dataStore dequeueLargePassenger];
+        [self.dataStore.largePassengerArray removeObjectAtIndex:0];
     } else {
         // no more large passenger planes left, dequeue small passenger planes
         if ([self.dataStore.smallPassengerArray count] > 0) {
-            [self.dataStore dequeueSmallPassenger];
+            [self.dataStore.smallPassengerArray removeObjectAtIndex:0];
         } else {
             // no more passenger planes left, dequeue large cargo
             if ([self.dataStore.largeCargoArray count] > 0) {
-                [self.dataStore dequeueLargeCargo];
+                [self.dataStore.largeCargoArray removeObjectAtIndex:0];
             } else {
                 if ([self.dataStore.smallCargoArray count] > 0)  {
-                    [self.dataStore dequeueSmallCargo];
+                    [self.dataStore.smallCargoArray removeObjectAtIndex:0];
                 }
             }
         }
-
     }
-    
     [self.tableView reloadData];
-   
 }
 
 
