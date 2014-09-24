@@ -74,9 +74,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Fqg-qJ-f7B">
                             <connections>
-                                <segue destination="eWO-Hh-EHd" kind="popoverPresentation" identifier="QueueToNewAircraftSegue" popoverAnchorBarButtonItem="Fqg-qJ-f7B" id="Nix-Xo-NhW">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="eWO-Hh-EHd" kind="show" identifier="QueueToNewAircraftSegue" id="Nix-Xo-NhW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,7 +82,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJs-Z1-Uos" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248.75" y="393.5"/>
+            <point key="canvasLocation" x="1026.5" y="395.5"/>
         </scene>
         <!--New Aircraft View Controller-->
         <scene sceneID="Nol-nv-V87">
@@ -95,6 +93,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Zu4-XC-Xse"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TmC-x6-n62">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EDV-Sp-lp3">
@@ -177,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPN-EJ-coN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2031.75" y="396.5"/>
+            <point key="canvasLocation" x="1627.5" y="395.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fp2-UJ-jC1">
