@@ -10,11 +10,13 @@
 		35A9EBE719D22BAC00A2EB40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EBE619D22BAC00A2EB40 /* main.m */; };
 		35A9EBEA19D22BAC00A2EB40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EBE919D22BAC00A2EB40 /* AppDelegate.m */; };
 		35A9EBED19D22BAC00A2EB40 /* AircraftQueueLocal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EBEB19D22BAC00A2EB40 /* AircraftQueueLocal.xcdatamodeld */; };
-		35A9EBF019D22BAC00A2EB40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EBEF19D22BAC00A2EB40 /* ViewController.m */; };
 		35A9EBF319D22BAC00A2EB40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A9EBF119D22BAC00A2EB40 /* Main.storyboard */; };
 		35A9EBF519D22BAC00A2EB40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A9EBF419D22BAC00A2EB40 /* Images.xcassets */; };
 		35A9EBF819D22BAC00A2EB40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A9EBF619D22BAC00A2EB40 /* LaunchScreen.xib */; };
 		35A9EC0419D22BAC00A2EB40 /* AircraftQueueLocalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC0319D22BAC00A2EB40 /* AircraftQueueLocalTests.m */; };
+		35A9EC1119D22C6D00A2EB40 /* AircraftQueueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1019D22C6D00A2EB40 /* AircraftQueueTableViewController.m */; };
+		35A9EC1419D22C9B00A2EB40 /* Aircraft.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1319D22C9B00A2EB40 /* Aircraft.m */; };
+		35A9EC1719D2433D00A2EB40 /* NewAircraftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9EC1619D2433D00A2EB40 /* NewAircraftViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,18 @@
 		35A9EBE819D22BAC00A2EB40 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35A9EBE919D22BAC00A2EB40 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		35A9EBEC19D22BAC00A2EB40 /* AircraftQueueLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AircraftQueueLocal.xcdatamodel; sourceTree = "<group>"; };
-		35A9EBEE19D22BAC00A2EB40 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		35A9EBEF19D22BAC00A2EB40 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		35A9EBF219D22BAC00A2EB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35A9EBF419D22BAC00A2EB40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		35A9EBF719D22BAC00A2EB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		35A9EBFD19D22BAC00A2EB40 /* AircraftQueueLocalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AircraftQueueLocalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A9EC0219D22BAC00A2EB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35A9EC0319D22BAC00A2EB40 /* AircraftQueueLocalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AircraftQueueLocalTests.m; sourceTree = "<group>"; };
+		35A9EC0F19D22C6D00A2EB40 /* AircraftQueueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AircraftQueueTableViewController.h; sourceTree = "<group>"; };
+		35A9EC1019D22C6D00A2EB40 /* AircraftQueueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AircraftQueueTableViewController.m; sourceTree = "<group>"; };
+		35A9EC1219D22C9B00A2EB40 /* Aircraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aircraft.h; sourceTree = "<group>"; };
+		35A9EC1319D22C9B00A2EB40 /* Aircraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aircraft.m; sourceTree = "<group>"; };
+		35A9EC1519D2433D00A2EB40 /* NewAircraftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAircraftViewController.h; sourceTree = "<group>"; };
+		35A9EC1619D2433D00A2EB40 /* NewAircraftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAircraftViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +89,10 @@
 		35A9EBE319D22BAC00A2EB40 /* AircraftQueueLocal */ = {
 			isa = PBXGroup;
 			children = (
+				35A9EC0D19D22C4000A2EB40 /* Model */,
+				35A9EC0E19D22C4400A2EB40 /* View Controllers */,
 				35A9EBE819D22BAC00A2EB40 /* AppDelegate.h */,
 				35A9EBE919D22BAC00A2EB40 /* AppDelegate.m */,
-				35A9EBEE19D22BAC00A2EB40 /* ViewController.h */,
-				35A9EBEF19D22BAC00A2EB40 /* ViewController.m */,
 				35A9EBF119D22BAC00A2EB40 /* Main.storyboard */,
 				35A9EBF419D22BAC00A2EB40 /* Images.xcassets */,
 				35A9EBF619D22BAC00A2EB40 /* LaunchScreen.xib */,
@@ -120,6 +126,26 @@
 				35A9EC0219D22BAC00A2EB40 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35A9EC0D19D22C4000A2EB40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35A9EC1219D22C9B00A2EB40 /* Aircraft.h */,
+				35A9EC1319D22C9B00A2EB40 /* Aircraft.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		35A9EC0E19D22C4400A2EB40 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35A9EC0F19D22C6D00A2EB40 /* AircraftQueueTableViewController.h */,
+				35A9EC1019D22C6D00A2EB40 /* AircraftQueueTableViewController.m */,
+				35A9EC1519D2433D00A2EB40 /* NewAircraftViewController.h */,
+				35A9EC1619D2433D00A2EB40 /* NewAircraftViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,8 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A9EBED19D22BAC00A2EB40 /* AircraftQueueLocal.xcdatamodeld in Sources */,
+				35A9EC1419D22C9B00A2EB40 /* Aircraft.m in Sources */,
+				35A9EC1119D22C6D00A2EB40 /* AircraftQueueTableViewController.m in Sources */,
+				35A9EC1719D2433D00A2EB40 /* NewAircraftViewController.m in Sources */,
 				35A9EBEA19D22BAC00A2EB40 /* AppDelegate.m in Sources */,
-				35A9EBF019D22BAC00A2EB40 /* ViewController.m in Sources */,
 				35A9EBE719D22BAC00A2EB40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
